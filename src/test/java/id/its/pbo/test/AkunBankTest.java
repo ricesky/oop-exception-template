@@ -20,12 +20,12 @@ public class AkunBankTest {
             akun.tarik(5000.0);
         });
     }
-
+    
     @Test
     public void testPenarikanMelebihiBatas() {
-        AkunBank akun = new AkunBank("1234567890", 6000.0);
+        AkunBank akun = new AkunBank("1234567890", 150000.0);
         assertThrows(BatasPenarikanException.class, () -> {
-            akun.tarik(5500.0);
+            akun.tarik(100001.0);
         });
     }
 

@@ -28,13 +28,14 @@ Sebuah bank memiliki sistem untuk mengecek saldo dan melakukan penarikan uang da
 Buatlah kelas custom exception sebagai berikut:
 1. `SaldoTidakCukupException` yang mengembalikan pesan "Saldo tidak mencukupi!"
 2. `AkunTidakDitemukanException` yang mengembalikan pesan "Akun tidak ditemukan!"
+3. `BatasPenarikanException` yang mengembalikan pesan "Melebihi batas penarikan harian."
 
 Buatlah kelas `AkunBank` dengan variabel instance sebagai berikut:
 - `nomorAkun` (tipe String)
 - `saldo` (tipe double)
 
 Kelas `AkunBank` harus memiliki metode:
-- `penarikan(double jumlah)` yang mengurangi saldo dengan jumlah yang diberikan. Jika saldo tidak mencukupi, lemparkan `SaldoTidakCukupException`.
+- `penarikan(double jumlah)` yang mengurangi saldo dengan jumlah yang diberikan. Jika saldo tidak mencukupi, lemparkan `SaldoTidakCukupException`. Jika jumlah yang ditarik lebih dari batas penarikan harian sebesar 100000, maka lemparkan `BatasPenarikanException`. Simpan nilai batas penarikan harian dalam sebuah variabel konstan static.
 - `getSaldo()` yang mengembalikan saldo saat ini.
 
 Buatlah kelas `Bank` dengan variabel instance berupa daftar akun (tipe List<AkunBank>). Kelas `Bank` harus memiliki metode:
